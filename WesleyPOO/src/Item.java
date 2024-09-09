@@ -1,4 +1,4 @@
-class Item {
+class Item implements Valuable {
 
   private String label;
   private int volume;
