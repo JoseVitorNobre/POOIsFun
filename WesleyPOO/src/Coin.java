@@ -1,6 +1,6 @@
 import java.text.DecimalFormat;
 
-enum Coin {
+enum Coin implements Valuable {
   C10( 0.10, 1, "M10"  ),
   C25( 0.25, 2, "M25"  ),
   C50( 0.50, 3, "M50"  ),
