@@ -100,7 +100,7 @@ class Pig {
         String coinsString = this.coins.isEmpty() ? "[]" : this.coins.toString();
         String itemsString = this.items.isEmpty() ? "[]" : this.items.toString();
     
-        return  itemsString + " : " + coinsString + " : " + d.format(this.getValue()) + "$ : " + this.getVolume() + "/" + this.getVolumeMax() + " : " + (this.broken ? "broken" : "intact");
+        return coinsString + " : " + d.format(this.getValue()) + "$ : " + this.getVolume() + "/" + this.getVolumeMax() + " : " + (this.broken ? "broken" : "intact");
 
         
     }

@@ -1,10 +1,10 @@
 import java.text.DecimalFormat;
 
 enum Coin {
-  C10( 0.10, 1, "C10"  ),
-  C25( 0.25, 2, "C25"  ),
-  C50( 0.50, 3, "C50"  ),
-  C100( 1.00, 4, "C100" );
+  C10( 0.10, 1, "M10"  ),
+  C25( 0.25, 2, "M25"  ),
+  C50( 0.50, 3, "M50"  ),
+  C100( 1.00, 4, "M100" );
 
   private double value;
   private int volume;
@@ -29,6 +29,6 @@ enum Coin {
   @Override
   public String toString() {
       DecimalFormat d = new DecimalFormat("0.00");
-      return  d.format(this.value) + ":" + this.volume;
+      return  this.label + ":" + d.format(this.value) + ":" + this.volume;
   }
 }
