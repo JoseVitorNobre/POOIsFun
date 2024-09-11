@@ -14,9 +14,13 @@ public class Solver {
               else if (args[0].equals("init"))         { pig = new Pig( (int) number(args[1]) ); }
               else if (args[0].equals("show"))         { println(pig); }
               else if (args[0].equals("addCoin"))      { pig.addCoin( pig.createCoin( args[1] ) ); }
-              else if (args[0].equals("addItem"))      { pig.addItem( new Item( args[1], (int) number(args[2]) ) ); }
+              
+              else if (args[0].equals("addItem")) 
+              { pig.addItem( new Item( args[1], Double.parseDouble(args[2]), (int) number(args[3]) ) ); 
+}
               else if (args[0].equals("break"))        { pig.breakPig(); }
-              else if (args[0].equals("extractValuables")) { println("[" + String.join(", ", pig.extractValuables()) + "]"); }
+              else if (args[0].equals("extractItems")) { println("[" + String.join(", ", pig.extractItems()) + "]"); }
+               else if (args[0].equals("extractCoins")) { println("[" + String.join(", ", pig.extractCoins()) + "]"); }
               else                                     { println("fail: comando invalido"); }
           } catch (Exception e) {
               println(e.getMessage());

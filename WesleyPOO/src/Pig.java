@@ -63,18 +63,40 @@ class Pig {
         return true;
     }
 
-    public ArrayList<String> extractValuables() throws Exception {
+    public ArrayList<String> extractItems() throws Exception {
         if (!this.broken) {
             throw new Exception("fail: you must break the pig first");
         }
 
-        ArrayList<String> labels = new ArrayList<>();
-        for (Valuable v : this.valuables) {
-            labels.add(v.toString());
+        ArrayList<String> items = new ArrayList<>();
+        Iterator<Valuable> iterator = this.valuables.iterator();
+        while (iterator.hasNext()) {
+            Valuable v = iterator.next();
+            if (v instanceof Item) {
+                items.add(v.toString());
+                iterator.remove(); 
+            }
         }
 
-        this.valuables.clear();
-        return labels;
+        return items;
+    }
+
+    public ArrayList<String> extractCoins() throws Exception {
+        if (!this.broken) {
+            throw new Exception("fail: you must break the pig first");
+        }
+
+        ArrayList<String> coins = new ArrayList<>();
+        Iterator<Valuable> iterator = this.valuables.iterator();
+        while (iterator.hasNext()) {
+            Valuable v = iterator.next();
+            if (v instanceof Coin) {
+                coins.add(v.toString());
+                iterator.remove(); 
+            }
+        }
+
+        return coins;
     }
 
     @Override
